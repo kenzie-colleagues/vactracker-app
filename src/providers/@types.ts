@@ -36,5 +36,43 @@ export interface IUserContextData {
 }
 
 export interface VaccinesProviderProps {
-    children: ReactNode;
-  }
+  children: ReactNode;
+}
+
+export type loadVaccines = () => void;
+
+export interface IUsersVaccines {
+  name: string;
+  data: string;
+  img: string;
+  vaccineId: number;
+  userId: number;
+}
+
+export interface IRenderUserVaccine {
+  name: string;
+  data: string;
+  img: string;
+  vaccineId: number;
+  userId: number;
+}
+
+export interface IVaccines {
+  name: string;
+  quantity: number;
+  price: number;
+  date: string;
+  information: string;
+  img: string;
+  id: number;
+}
+
+export interface IVaccinesContext {
+  loading: boolean;
+  vaccines: IVaccines[];
+  setVaccines: React.Dispatch<React.SetStateAction<IVaccines[]>>;
+  renderVaccines: IRenderUserVaccine[] | undefined;
+  setRenderVaccines: React.Dispatch<
+    React.SetStateAction<IRenderUserVaccine[] | undefined>
+  >;
+}
