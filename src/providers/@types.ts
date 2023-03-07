@@ -27,12 +27,14 @@ export interface IUserLoginFormValues {
 export type UserAutoLoginFunction = () => void;
 
 export interface IUserContextData {
-    loading: boolean;
-    setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-    user: IUser | null;
-    userRegister: (data: IUserRegisterFormValues) => Promise<void>;
-    userLogin: (data: IUserLoginFormValues) => Promise<void>;
-    userLogout: () => void;
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  user: IUser | null;
+  userRegister: (data: IUserRegisterFormValues) => Promise<void>;
+  userLogin: (data: IUserLoginFormValues) => Promise<void>;
+  userLogout: () => void;
+}
+
+export interface VaccinesProviderProps {
+    children: ReactNode;
   }
-
-
