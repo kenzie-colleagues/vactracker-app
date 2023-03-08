@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify/dist/core";
+import { toast } from "react-toastify"
 import api from "../services/api";
 import {
   IUser,
