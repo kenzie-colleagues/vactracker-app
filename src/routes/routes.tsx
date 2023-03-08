@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "../page/dashboard/Dashboard";
 import HomePage from "../page/homepage/HomePage";
-import RegisterPage from "../page/homepage/RegisterPage";
+import RegisterPage from "../page/registerpage/RegisterPage";
 import LoginPage from "../page/loginpage/LoginPage";
 import NotFoundPage from "../page/notfoundpage/NotFoundPage";
 import ProtectRoutes from "../page/protectRoutes/ProtectRoutes";
