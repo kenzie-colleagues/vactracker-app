@@ -1,40 +1,32 @@
 import React from "react";
 import { Button } from "@mui/material";
-import { Event } from "react-toastify/dist/core";
+import { Link } from "react-router-dom";
 
 type HeaderProps = {
-  showRegisterButton?: boolean,
-  showLoginButton?: boolean,
-  // onButtonClick recebe um evento de clique em um botao, e nao retorna nada((event: React.MouseEvent<HTMLButtonElement>) => void;)
-  onButtonClick?: (event: React.MouseEvent<HTMLButtonElement>) => void | undefined;
+  showRegisterButton?: boolean;
+  showLoginButton?: boolean;
 };
 
 const Header: React.FC<HeaderProps> = ({
   showRegisterButton,
   showLoginButton,
-  onButtonClick,
 }) => {
-  const handleRegisterClick = () => {
-    if (onButtonClick) {
-      onButtonClick(event);
-    }
-  };
-
-  const handleLoginClick = () => {
-    if (onButtonClick) {
-      onButtonClick(event);
-    }
-  };
-
   return (
     <header>
       {showRegisterButton && (
-        <Button onClick={handleRegisterClick}>Cadastro</Button>
+        <Link to="/register">
+          <Button>Cadastro</Button>
+        </Link>
       )}
-      {showLoginButton && <Button onClick={handleLoginClick}>Login</Button>}
+      {showLoginButton && (
+        <Link to="/login">
+          <Button>Login</Button>
+        </Link>
+      )}
       <Button>Voltar</Button>
     </header>
   );
 };
 
 export default Header;
+
