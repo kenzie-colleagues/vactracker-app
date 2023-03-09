@@ -20,6 +20,7 @@ export interface IUserRegisterFormValues {
 }
 
 export interface IUserLoginFormValues {
+  accesToken(accesToken: string): unknown;
   email: string;
   password: string;
 }

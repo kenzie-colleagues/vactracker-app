@@ -6,10 +6,12 @@ const LoginPage = () => {
   return (
     <>
       <Header showLoginButton />
-      <form>
+      <div>
+
         <InputComponent />
-        <InputComponent />
-      </form>
+
+      </div>
+    
     </>
   );
 };
