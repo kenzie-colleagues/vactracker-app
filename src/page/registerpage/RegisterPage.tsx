@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import Header from "../../components/header/header";
+import InputComponent from "../../components/input/Input";
 
-const RegisterPage = () => {
+const LoginPage = () => {
   return (
-    <div>RegisterPage</div>
-  )
-}
-
-export default RegisterPage
+    <>
+      <Header showRegisterButton />
+      <form>
+        <InputComponent />
+        <InputComponent />
+      </form>
+    </>
+  );
+};
+export default LoginPage;
