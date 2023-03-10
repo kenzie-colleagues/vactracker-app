@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import { CartProvider } from "./providers/CartContext/CartContext";
 import UserProvider from "./providers/UserContext";
 import VaccinesProvider from "./providers/VaccinesContext";
 
@@ -10,7 +11,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <BrowserRouter>
       <UserProvider>
         <VaccinesProvider>
-          <App />
+          <CartProvider>
+            <App />
+          </CartProvider>
         </VaccinesProvider>
       </UserProvider>
     </BrowserRouter>

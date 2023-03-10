@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 import { MdShoppingCart, MdLogout } from "react-icons/md";
-import SearchForm from "./SearchForm";
 import { UserContext } from "../../providers/UserContext";
 import CartModal from "../CartModal";
+import SearchForm from "./Search";
 
 
 const HeaderDash = () => {
-  const { logoutDashboard } = useContext(UserContext);
+  const { userLogout } = useContext(UserContext);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false); // novo estado
 
   const handleOpenCartModal = () => {
@@ -26,7 +26,7 @@ const HeaderDash = () => {
                   <button type="button" onClick={handleOpenCartModal}> {/* adiciona a função de abrir o modal */}
                       <MdShoppingCart />
                   </button>
-                  <button onClick={logoutDashboard} type="button">
+                  <button onClick={userLogout} type="button">
                       <MdLogout />
                   </button>
               </div>
