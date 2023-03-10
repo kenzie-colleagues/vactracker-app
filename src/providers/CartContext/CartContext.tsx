@@ -15,7 +15,7 @@ export const CartProvider = ({ children }: IDefaultProviderProps) => {
   const navigate = useNavigate();
   const localMenuCartList = localStorage.getItem("@VACCINES");
   const [cart, setCart] = useState<IVaccines[]>([]);
-  //   const [modalCartShoppingList, setModalCartShoppingList] = useState(false);
+    const [modalCartShoppingList, setModalCartShoppingList] = useState(false);
   const [shoppingCartList, setShoppingCartList] = useState(
     localMenuCartList ? JSON.parse(localMenuCartList) : []
   );
@@ -94,8 +94,8 @@ export const CartProvider = ({ children }: IDefaultProviderProps) => {
       value={{
         cart,
         setCart,
-        // modalCartShoppingList,
-        // setModalCartShoppingList,
+        modalCartShoppingList,
+        setModalCartShoppingList,
         addCartShopping,
         searchMenuList,
         setShoppingCartList,
