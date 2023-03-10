@@ -18,7 +18,7 @@ const VaccinesProvider = ({ children }: VaccinesProviderProps) => {
   const token = localStorage.getItem("@TOKEN");
   const [renderVaccines, setRenderVaccines] = useState<IRenderUserVaccine[]>();
 
-  useEffect(() => {
+  
     const loadVaccines: loadVaccines = async () => {
       try {
         setLoading(true);
@@ -34,8 +34,7 @@ const VaccinesProvider = ({ children }: VaccinesProviderProps) => {
         setLoading(false);
       }
     };
-    loadVaccines();
-  }, []);
+    
 
   const usersVaccines = async (data: IUsersVaccines) => {
     try {
