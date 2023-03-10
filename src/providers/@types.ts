@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { FieldError, UseFormRegisterReturn } from "react-hook-form";
+import { FieldErrors, UseFormRegisterReturn } from "react-hook-form";
 
 export interface IUserProviderProps {
   children: ReactNode;
@@ -21,7 +21,7 @@ export interface IUserRegisterFormValues {
 }
 
 export interface IUserLoginFormValues {
-  accesToken(accesToken: string): unknown;
+  
   email: string;
   password: string;
 }
@@ -82,5 +82,7 @@ export interface IVaccinesContext {
 export interface IInputProps{
   label:string;
   register: UseFormRegisterReturn<string>;
-  error?: FieldError
+  error?: string;
+  type: 'text' | 'email' | 'password'
+  placeholder: string
 }
