@@ -9,9 +9,9 @@ export const CartContext = createContext({} as ICartContext);
 
 export const CartProvider = ({ children }: IDefaultProviderProps) => {
   const navigate = useNavigate();
-  const localMenuCartList = localStorage.getItem("@MENU");
+  const localMenuCartList = localStorage.getItem("@VACCINES");
   const [cart, setCart] = useState<IVaccines[]>([]);
-  //   const [modalCartShoppingList, setModalCartShoppingList] = useState(false);
+    const [modalCartShoppingList, setModalCartShoppingList] = useState(false);
   const [shoppingCartList, setShoppingCartList] = useState(
     localMenuCartList ? JSON.parse(localMenuCartList) : []
   );
@@ -22,7 +22,7 @@ export const CartProvider = ({ children }: IDefaultProviderProps) => {
     if (token) {
       const shopForm = async () => {
         try {
-          const response = await api.get<IVaccines[]>("/vaccines", {
+          const response = await api.get<IVaccines[]>("vaccines", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -39,14 +39,13 @@ export const CartProvider = ({ children }: IDefaultProviderProps) => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("@MENU", JSON.stringify(shoppingCartList));
+    localStorage.setItem("@VACCINES", JSON.stringify(shoppingCartList));
   }, [shoppingCartList]);
 
   const searchMenuList = cart.filter((product) =>
     search === ""
       ? true
-      : product.name.toLowerCase().includes(search.toLowerCase()) ||
-        product.category.toLowerCase().includes(search.toLowerCase())
+      : product.name.toLowerCase().includes(search.toLowerCase())
   );
 
   const addCartShopping = (product: IVaccines) => {
@@ -90,8 +89,8 @@ export const CartProvider = ({ children }: IDefaultProviderProps) => {
       value={{
         cart,
         setCart,
-        // modalCartShoppingList,
-        // setModalCartShoppingList,
+        modalCartShoppingList,
+        setModalCartShoppingList,
         addCartShopping,
         searchMenuList,
         setShoppingCartList,

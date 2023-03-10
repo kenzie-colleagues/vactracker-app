@@ -1,36 +1,45 @@
-import React, { useState } from "react";
 import { MdClose } from 'react-icons/md';
+import { useContext } from 'react';
 import CartProductList from './CartProductList';
-//import { CartModalProps } from "../../providers/@types";  CONFIRMAR COM MARI 
-import { useContext } from "react";
+import { CartContext } from '../../providers/CartContext/CartContext';
 
-{/*Verificar oande por exportação abaixo com a Mari*/}
-export interface CartModalProps  {
-    onClose: () => any
-    }
+const CartModal = () => {
+  const {setModalCartShoppingList, shoppingCartList } = useContext(CartContext);
 
-const modalBody =  ({ onClose }: CartModalProps) =>  { // recebe a função onClose como prop, porém confirmar ocm Mari
-  
   return (
-      <dialog>
-
+    <div>
+      <div>
         <header>
-           <h2>Carrinho de Compras</h2> 
-          <button type="button" aria-label="Fechar" onClick={onClose} > {/* adiciona a função de fechar o modal */}
-            <MdClose />
+          <h2>
+            Carrinho de Compras
+          </h2>
+          <button
+            type='button'
+            aria-label='Fechar'
+            onClick={() => setModalCartShoppingList(false)}
+          >
+            <MdClose size={21} />
           </button>
         </header>
 
-        <div>/{/* div que abre ala para os card da vacina*/}
-          <CartProductList />
+        <div>
+          {shoppingCartList.length > 0 ? (
+
+            <CartProductList />
+          ) : (
+            <div >
+              <h3>
+                Sua sacola está vazia
+              </h3>
+              <div>
+                Adicione itens
+              </div>
+            </div>
+          )}
         </div>
-      </dialog>
+      </div>
+    </div>
   );
 };
-export default modalBody
 
-
-
-
-
-
+export default CartModal;
