@@ -46,7 +46,9 @@
 
 ## :dart: About ##
 
-With our web application, finding accurate vaccine information, scheduling and purchasing doses has never been easier. Our product was developed to simplify the vaccination process, making it safer and more efficient for users. With the possibility of registering on the platform, users can easily find and schedule their vaccination, receive important notifications, in addition to having access to accurate and up-to-date information about each type of vaccine. We stand out for offering an intuitive, secure and easy-to-use platform, as well as providing exceptional customer support. Try it now and enjoy the peace of mind of having control of your vaccination in your own hands!”
+With our web application, finding accurate vaccine information, scheduling and purchasing doses has never been easier. Our product was developed to simplify the vaccination process, making it safer and more efficient for users. With the possibility of registering on the platform, users can easily find and schedule their vaccination, receive important notifications, in addition to having access to accurate and up-to-date information about each type of vaccine. We stand out for offering an intuitive, secure and easy-to-use platform, as well as providing exceptional customer support. Try it now and enjoy the peace of mind of having control of your vaccination in your own hands!
+
+Com nossa aplicação web, encontrar informações precisas sobre vacinas, agendar e comprar doses nunca foi tão fácil. Nosso produto foi desenvolvido para simplificar o processo de vacinação, tornando-o mais seguro e eficiente para os usuários. Com a possibilidade de registro na plataforma, os usuários podem facilmente encontrar e agendar sua vacinação, receber notificações importantes, além de ter acesso a informações precisas e atualizadas sobre cada tipo de vacina. Nos destacamos por oferecer uma plataforma intuitiva, segura e fácil de usar, além de fornecer um suporte excepcional ao cliente. Experimente agora e desfrute da tranquilidade de ter o controle de sua vacinação em suas próprias mãos!
 
 ## :sparkles: Features ##
 
