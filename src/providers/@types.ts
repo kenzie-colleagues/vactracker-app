@@ -60,7 +60,6 @@ export interface IRenderUserVaccine {
 }
 
 export interface IVaccines {
-  category: any;
   name: string;
   quantity: number;
   price: number;
