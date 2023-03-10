@@ -3,8 +3,11 @@ import EmailIcon from "@mui/icons-material/Email";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
+import { IInputProps } from "../../providers/@types";
 
-function InputComponent() {
+
+
+function InputComponent({label, register, error}:IInputProps) {
   const {register, handleSubmit} = useForm<any>()
   const {userLogin} = useContext(UserContext)
   
@@ -22,7 +25,7 @@ function InputComponent() {
           type="email"
           className="w-full sm:w-1/2 bg-blue-100 border rounded py-2 px-10 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
           placeholder="Digite seu email"
-          {...register('email')}
+          {...register}
         />
       </div>
       <label
@@ -40,8 +43,9 @@ function InputComponent() {
           type="password"
           className="w-full sm:w-1/2 bg-blue-100 border rounded py-2 px-10 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
           placeholder="Digite sua senha"
-          {...register('password')}
+          {...register}
         />
+        {error ? <p>{error.message}</p> : null}
       </div>
       <button type="submit" >Enviar</button>
       </form>

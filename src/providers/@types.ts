@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { FieldError, UseFormRegisterReturn } from "react-hook-form";
 
 export interface IUserProviderProps {
   children: ReactNode;
@@ -77,4 +78,10 @@ export interface IVaccinesContext {
   setRenderVaccines: React.Dispatch<
     React.SetStateAction<IRenderUserVaccine[] | undefined>
   >;
+}
+
+export interface IInputProps{
+  label:string;
+  register: UseFormRegisterReturn<string>;
+  error?: FieldError
 }
