@@ -1,10 +1,20 @@
-import React from 'react'
+import { useContext } from 'react';
+import HeaderDash from '../../components/HeaderDash';
+import CartModal from '../../components/CartModal';
 
-const Dashboard = () => {
-  
+import { CartContext }  from '../../providers/CartContext/CartContext';
+const ShopPage = () => {
+  const { modalCartShoppingList } = useContext(CartContext);
   return (
-    <div>Dashboard</div>
-  )
-}
-
-export default Dashboard
+    <div>
+      {modalCartShoppingList ? <CartModal /> : null}
+      <HeaderDash />
+      <main>
+        <div >
+       {/* renderizar lista de produtos */} 
+        </div>
+      </main>
+    </div>
+  );
+};
+export default ShopPage;

@@ -1,7 +1,6 @@
-import { MdSearch } from "react-icons/md";
+/*import { MdSearch } from "react-icons/md";
 import React, { useContext } from "react";
 import { CartContext } from "../../../providers/CartContext";
-
 const SearchForm = () => {
 
   const { searchItem } =  useContext(CartContext)
@@ -17,3 +16,4 @@ const SearchForm = () => {
 };
 
 export default SearchForm;
+*/

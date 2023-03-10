@@ -11,8 +11,8 @@ export interface IProductsProps {
 export interface ICartContext {
   cart: IVaccines[];
   setCart: React.Dispatch<React.SetStateAction<IVaccines[]>>;
-  // modalCartShoppingList: boolean;
-  // setModalCartShoppingList: React.Dispatch<React.SetStateAction<boolean>>;
+  modalCartShoppingList: boolean;
+   setModalCartShoppingList: React.Dispatch<React.SetStateAction<boolean>>;
   addCartShopping: (product: IVaccines) => void;
   searchMenuList: IVaccines[];
   setShoppingCartList: React.Dispatch<any>;
