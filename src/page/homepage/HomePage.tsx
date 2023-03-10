@@ -6,6 +6,8 @@ import Home from "../../assets/Home.png";
 
 const HomePage = () => {
 
+
+
   return (
     <>
       <HeaderHomePage />
@@ -13,9 +15,13 @@ const HomePage = () => {
       <div>
         <img src={Home} alt="" />
         <h1>Vacinas Disponíveis para Compra</h1>
-
         <div>
+          <ul>
 
+
+
+
+          </ul>
         </div>
       </div>
 

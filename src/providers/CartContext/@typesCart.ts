@@ -5,7 +5,7 @@ export interface IDefaultProviderProps {
 }
 
 export interface IProductsProps {
-  product: IVaccines;
+  product: IVaccines
 }
 
 export interface ICartContext {

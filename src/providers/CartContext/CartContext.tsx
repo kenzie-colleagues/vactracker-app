@@ -1,13 +1,17 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import api from "../../services/api";
 import { IVaccines } from "../@types";
+import { UserContext } from "../UserContext";
 import { ICartContext, IDefaultProviderProps } from "./@typesCart";
 
 export const CartContext = createContext({} as ICartContext);
 
 export const CartProvider = ({ children }: IDefaultProviderProps) => {
+
+  const {user} = useContext(UserContext)
+
   const navigate = useNavigate();
   const localMenuCartList = localStorage.getItem("@VACCINES");
   const [cart, setCart] = useState<IVaccines[]>([]);
@@ -19,7 +23,8 @@ export const CartProvider = ({ children }: IDefaultProviderProps) => {
 
   useEffect(() => {
     const token = localStorage.getItem("@TOKEN");
-    if (token) {
+
+    if (token && user) {
       const shopForm = async () => {
         try {
           const response = await api.get<IVaccines[]>("vaccines", {
@@ -28,7 +33,6 @@ export const CartProvider = ({ children }: IDefaultProviderProps) => {
             },
           });
           setCart(response.data);
-
           navigate("/dashboard");
         } catch (error) {
           console.log(error);
@@ -36,7 +40,7 @@ export const CartProvider = ({ children }: IDefaultProviderProps) => {
       };
       shopForm();
     }
-  }, []);
+  }, [user]);
 
   useEffect(() => {
     localStorage.setItem("@VACCINES", JSON.stringify(shoppingCartList));
@@ -47,6 +51,7 @@ export const CartProvider = ({ children }: IDefaultProviderProps) => {
       ? true
       : product.name.toLowerCase().includes(search.toLowerCase())
   );
+  console.log(searchMenuList);
 
   const addCartShopping = (product: IVaccines) => {
     const localMenuCartList = localStorage.getItem("@VACCINES");
