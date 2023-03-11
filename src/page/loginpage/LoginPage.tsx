@@ -42,7 +42,7 @@ const LoginPage = () => {
               placeholder="Seu email"
               type="email"
               register={register("email")}
-              error={errors.email?.message}
+        
             />
             <span className="text-red-500" >{errors.email && errors.email.message}</span>
           </div>
@@ -51,7 +51,7 @@ const LoginPage = () => {
               label="Seu password"
               type="password"
               register={register("password")}
-              error={errors.password?.message}
+              
               placeholder="Password"
             />
             <span className="text-red-500" >{errors.password && errors.password.message}</span>
