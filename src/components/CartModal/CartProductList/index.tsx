@@ -14,7 +14,7 @@ const CartProductList = () => {
         {shoppingCartList.map(
           (product: IVaccines) =>
             product.name && (
-              <CartProductCard key={product.id} product={product} />
+                <CartProductCard key={product.id} product={product} />
             )
         )}
       </ul>

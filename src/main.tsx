@@ -11,8 +11,8 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <BrowserRouter>
       <UserProvider>
         <VaccinesProvider>
-        <CartProvider>
-          <App />
+          <CartProvider>
+            <App />
           </CartProvider>
         </VaccinesProvider>
       </UserProvider>
