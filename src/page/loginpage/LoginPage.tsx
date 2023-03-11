@@ -23,7 +23,7 @@ const LoginPage = () => {
     <>
       <Header showLoginButton />
       <div className="w-full max-w-xs md:max-w-lg mx-auto mt-4 mb-8">
-        <h3 className="px-6 text-lg md:text-2xl text-center font-bold">
+        <h3 className="px-6 text-lg md:text-2xl text-center mt-4 mb-8 font-bold">
           Login
         </h3>
         <form onSubmit={handleSubmit(submit)}>
@@ -48,9 +48,10 @@ const LoginPage = () => {
           <div className="flex">
             <div className="flex-1">
               <Button
+                type="submit"
                 variant="contained"
                 color="primary"
-                className="w-full"
+                className="w-full hover:bg-blue-700"
                 style={{ backgroundColor: "#87BF9A" }}
               >
                 Login
