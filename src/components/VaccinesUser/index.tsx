@@ -6,8 +6,8 @@ function VaccinesUser() {
   const {vaccinesCardUser} = useContext(VaccinesContext);
 
   return (
-    <section className=" sticky mt-50 w-96 border-r-4 h-full ">
-      <header className="w-60">
+    <section className="mt-50 w-full border-b-4 md:border-r-4 h-full ">
+      <header className="w-full flex justify-center items-center ">
         <h2 className=" text-center mb-10 mt-3 text-lg font-medium text-gray-900" >Caderneta de Vacinação</h2>
       </header>
 

@@ -3,9 +3,9 @@ import { IProductsProps } from '../../../../providers/CartContext/@typesCart'
 
 const VaccinesUserCard= ({ product }: IProductsProps) => {
   return (
-    <li className="w-90 bg-slate-50  ml-10 mr-10 mb-10 rounded  outline-gray-600 shadow-2xl" >
-        <div>
-        <img src={`${product.img}`} alt="Vacinas"  className="w-40 center"/>
+    <li className="w-90 flex items-center justify-around rounded-lg bg-white md:flex-col  ml-10 mr-10 mb-10 outline-gray-600 shadow-2xl" >
+        <div className='w-1/2 h-1/6  ' >
+        <img src={`${product.img}`} alt="Vacinas"  className="w-full center rounded-lg "/>
         </div>
         <div>
             <h3 className="text-base text-green-600 font-medium text-center">{product.name}</h3>

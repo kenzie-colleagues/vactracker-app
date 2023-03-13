@@ -12,17 +12,17 @@ const Dashboard = () => {
   const { modalCartShoppingList } = useContext(CartContext);
 
   return (
-    <div className="w-full" >
+    <div className="w-full h-full " >
       <HeaderDash />      
-      <main className="m-14 flex sm ">
-        <div className="w-2/5">
+      <main className="w-full flex sm	flex-col md:flex-row ">
+        <div className="w-full md:max-w-md">
         <VaccinesUser/>
-        </div>
-        <aside >
+        </div >
+        <aside className="w-full p-8 " >
         <ProductList />
         </aside>
-      </main>
       {modalCartShoppingList ? <CartModal /> : null}
+      </main>
       <FooterHomePage/>
       
     </div>
