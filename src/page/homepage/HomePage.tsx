@@ -1,5 +1,4 @@
 import React from "react";
-import {useContext} from "react"
 import { FooterHomePage } from "../../components/FooterHome";
 import { HeaderHomePage } from "../../components/HeaderHome";
 import Home from "../../assets/Home.png";
