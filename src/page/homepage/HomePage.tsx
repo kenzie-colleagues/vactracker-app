@@ -1,6 +1,10 @@
+import React from "react";
+import { FooterHomePage } from "../../components/FooterHome";
+import { HeaderHomePage } from "../../components/HeaderHome";
 import React, { useEffect, useState } from "react";
 import FooterHomePage  from "../../components/FooterHome";
 import  HeaderHomePage  from "../../components/HeaderHome";
+
 import Home from "../../assets/Home.png";
 import { IVaccines } from "../../providers/@types";
 import api from "../../services/api";
