@@ -9,13 +9,12 @@ import { ICartContext, IDefaultProviderProps } from "./@typesCart";
 export const CartContext = createContext({} as ICartContext);
 
 export const CartProvider = ({ children }: IDefaultProviderProps) => {
-
-  const {user} = useContext(UserContext)
+  const { user } = useContext(UserContext);
 
   const navigate = useNavigate();
   const localVaccinesCartList = localStorage.getItem("@VACCINES");
   const [cart, setCart] = useState<IVaccines[]>([]);
-    const [modalCartShoppingList, setModalCartShoppingList] = useState(false);
+  const [modalCartShoppingList, setModalCartShoppingList] = useState(false);
   const [shoppingCartList, setShoppingCartList] = useState(
     localVaccinesCartList ? JSON.parse(localVaccinesCartList) : []
   );
@@ -51,7 +50,6 @@ export const CartProvider = ({ children }: IDefaultProviderProps) => {
       ? true
       : product.name.toLowerCase().includes(search.toLowerCase())
   );
-  console.log(searchMenuList);
 
   const addCartShopping = (product: IVaccines) => {
     const localMenuCartList = localStorage.getItem("@VACCINES");

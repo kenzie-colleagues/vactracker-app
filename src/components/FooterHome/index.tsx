@@ -10,8 +10,6 @@ const FooterHomePage = () => {
       </div>
       <div>
       <Link className='  ml-64 '   to={"/mail"}>Ajuda</Link>
-  
-
       </div>
     </footer>
   )
