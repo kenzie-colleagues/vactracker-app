@@ -11,6 +11,7 @@ const FooterHomePage = () => {
       </div>
       <div>
         <Link className='ml-64' to={"/mail"}>
+          <span className='mr-4 text-emerald-800'  >Fale Conosco</span>
           <img src={FaleConoscoImg} alt="Fale Conosco" className="inline-block h-12 w-12" />
         </Link>
       </div>

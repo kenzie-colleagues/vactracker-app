@@ -23,26 +23,27 @@ const HomePage = () => {
   }, []);
   return (
     <>
-      <Header showLoginButton showRegisterButton showHomeButton={false} />
-
-      <div className="flex">
-        <img src={Home} alt="" />
-        <section>
-          <h1 className="mt-6 justify-center ml-64 mb-10 text-xl text-emerald-700 ">
-            Vacinas Disponíveis para Compra
-          </h1>
-          <div>
-            <ul className="flex flex-wrap ">
-              {list.map(
-                (product: IVaccines) =>
-                  product.name && <CardOff key={product.id} product={product} />
-              )}
-            </ul>
-          </div>
-        </section>
-      </div>
-      <FooterHomePage />
-    </>
+    <Header showLoginButton showRegisterButton showHomeButton={false} />
+  
+    <div className="flex">
+      <img src={Home} alt="fotocriança" className="w-1/2 " />
+      <section>
+        <h1 className="mt-6 justify-center ml-64 mb-10 text-xl text-emerald-700 ">
+          Vacinas Disponíveis para Compra
+        </h1>
+        <div className="max-h-500 overflow-y-auto">
+          <ul className="flex flex-wrap ">
+            {list.map(
+              (product: IVaccines) =>
+                product.name && <CardOff key={product.id} product={product} />
+            )}
+          </ul>
+        </div>
+      </section>
+    </div>
+    <FooterHomePage />
+  </>
+  
   );
 };
 export default HomePage;

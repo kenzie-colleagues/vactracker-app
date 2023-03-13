@@ -12,7 +12,7 @@ const SearchForm = () => {
   };
   return (
     <form onSubmit={submit}>
-      <input  className=" sm:flex-row ml-44 pl-4  rounded-lg space-x-4  h-full "
+      <input  className=" sm:flex-row ml-44 pl-4  rounded-lg space-x-4  h-full p-3 "
         type='text'
         placeholder='Digitar pesquisa'
         value={searchValue}

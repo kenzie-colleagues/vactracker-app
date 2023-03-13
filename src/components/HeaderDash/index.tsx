@@ -32,12 +32,12 @@ return (
   
         <div className=' ml-12'>
         <button className='ml-44' type="button" onClick={handleOpenCartModal}>
-            <MdShoppingCart  />
+            <MdShoppingCart className='w-8 h-8'  />
           </button>
           <button className=' ml-8' type='button'
           onClick={() =>{userLogout()}}
           >
-            <MdLogout />
+            <MdLogout className='w-8 h-8 mt-2' />
           </button>
         </div>
         </div>
