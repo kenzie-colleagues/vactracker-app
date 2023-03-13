@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import FooterHomePage from "../../components/FooterHome";
 import Home from "../../assets/Home.png";
 import { IVaccines } from "../../providers/@types";
@@ -23,27 +23,27 @@ const HomePage = () => {
   }, []);
   return (
     <>
-    <Header showLoginButton showRegisterButton showHomeButton={false} />
-  
-    <div className="flex">
-      <img src={Home} alt="fotocriança" className="w-1/2 " />
-      <section>
-        <h1 className="mt-6 justify-center ml-64 mb-10 text-xl text-emerald-700 ">
-          Vacinas Disponíveis para Compra
-        </h1>
-        <div className="max-h-500 overflow-y-auto">
-          <ul className="flex flex-wrap ">
-            {list.map(
-              (product: IVaccines) =>
-                product.name && <CardOff key={product.id} product={product} />
-            )}
-          </ul>
-        </div>
-      </section>
-    </div>
-    <FooterHomePage />
-  </>
-  
+      <Header showLoginButton showRegisterButton showHomeButton={false} />
+
+      <div className="flex">
+        <img src={Home} alt="fotocriança" className="w-1/2 max-h-700 " />
+        <section>
+          <h1 className="mt-6 justify-center mb-10 text-xl text-center text-emerald-700 sm:text-lg">
+            Lista de vacinas
+          </h1>
+
+          <div className="max-h-300 overflow-y-auto">
+            <ul className="flex flex-wrap max-h-600 overflow-x-auto max-w-[200px] sm:max-w-full">
+              {list.map(
+                (product: IVaccines) =>
+                  product.name && <CardOff key={product.id} product={product} />
+              )}
+            </ul>
+          </div>
+        </section>
+      </div>
+      <FooterHomePage />
+    </>
   );
 };
 export default HomePage;
