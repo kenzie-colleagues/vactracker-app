@@ -2,12 +2,10 @@ import React from "react";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
-
 type HeaderProps = {
   showRegisterButton?: boolean;
   showLoginButton?: boolean;
 };
-
 const Header: React.FC<HeaderProps> = ({
   showRegisterButton,
   showLoginButton,
@@ -28,7 +26,6 @@ const Header: React.FC<HeaderProps> = ({
           </span>
         </div>
       </div>
-
       <div className="flex flex-row space-x-4 items-center">
         {showRegisterButton && (
           <Link to="/login" className="sm:w-1/2">
@@ -95,8 +92,6 @@ const Header: React.FC<HeaderProps> = ({
     </header>
   </div>
 </div>
-
   );
 };
-
 export default Header;

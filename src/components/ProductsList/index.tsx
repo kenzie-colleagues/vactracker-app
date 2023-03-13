@@ -6,7 +6,7 @@ import { IVaccines } from "../../providers/@types";
 const ProductList = () => {
   const { searchMenuList } = useContext(CartContext);
   return (
-    <ul>
+    <ul className="flex flex-wrap ">
       {searchMenuList.map((product: IVaccines) => product.name && <ProductCard key={product.id} product={product} />
       )}
     </ul>

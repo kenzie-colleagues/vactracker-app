@@ -7,12 +7,10 @@ import { IUserLoginFormValues } from "../../providers/@types";
 import { UserContext } from "../../providers/UserContext";
 import * as yup from 'yup'
 import { yupResolver } from "@hookform/resolvers/yup";
-
 const formSchema = yup.object().shape({
   email: yup.string().required('Email inválido').email('Email inválido'),
   password: yup.string().required("Senha Inválida"),
 })
-
 const LoginPage = () => {
   const {
     register,
@@ -21,13 +19,10 @@ const LoginPage = () => {
   } = useForm<IUserLoginFormValues>({
     resolver: yupResolver(formSchema)
 });
-
   const { userLogin } = useContext(UserContext);
-
   const submit = (data: IUserLoginFormValues) => {
     userLogin(data);
   };
-
   return (
     <>
       <Header showLoginButton />
@@ -42,7 +37,6 @@ const LoginPage = () => {
               placeholder="Seu email"
               type="email"
               register={register("email")}
-        
             />
             <span className="text-red-500" >{errors.email && errors.email.message}</span>
           </div>
@@ -51,7 +45,6 @@ const LoginPage = () => {
               label="Seu password"
               type="password"
               register={register("password")}
-              
               placeholder="Password"
             />
             <span className="text-red-500" >{errors.password && errors.password.message}</span>
@@ -75,5 +68,3 @@ const LoginPage = () => {
   );
 };
 export default LoginPage;
-
-

@@ -7,7 +7,6 @@ import { IUserRegisterFormValues } from "../../providers/@types";
 import { UserContext } from "../../providers/UserContext";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-
 const formSchema = yup.object().shape({
   email: yup.string().required("Email obrigatório").email("Email inválido"),
   password: yup
@@ -24,10 +23,8 @@ const formSchema = yup.object().shape({
   name: yup.string().required("Nome obrigatório"),
   dateOfBirth: yup.string().required("Campo obrigatório"),
   CPF: yup.string().required("Campo obrigatório"),
-
   course_module: yup.string().required("Campo obrigatório"),
 });
-
 const RegisterPage = () => {
   const {
     register,
@@ -36,13 +33,10 @@ const RegisterPage = () => {
   } = useForm<IUserRegisterFormValues>({
     resolver: yupResolver(formSchema),
   });
-
   const { userRegister } = useContext(UserContext);
-
   const submit = (data: IUserRegisterFormValues) => {
     userRegister(data);
   };
-
   return (
     <>
       <Header showRegisterButton />
@@ -50,7 +44,6 @@ const RegisterPage = () => {
         <h3 className="px-6 text-lg md:text-2xl text-center mt-4 mb-8 font-bold">
           Cadastrar
         </h3>
-
         <form onSubmit={handleSubmit(submit)}>
           <div className="grid gap-4">
             <div>
@@ -69,7 +62,6 @@ const RegisterPage = () => {
                 </span>
               </div>
             </div>
-
             <div className="flex flex-col mx-auto my-auto w-full max-w-xs md:max-w-lg">
               <InputComponent
                 label="Seu password"
@@ -158,5 +150,4 @@ const RegisterPage = () => {
     </>
   );
 };
-
 export default RegisterPage;

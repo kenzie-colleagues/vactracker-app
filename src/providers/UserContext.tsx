@@ -23,11 +23,10 @@ const UserProvider = ({ children }: IUserProviderProps) => {
 
   const userRegister = async (data: IUserRegisterFormValues) => {
     try {
-      const response = await api.post("register", data);
+      await api.post("register", data);
       toast.success("Cadastro realizado com sucesso!");
       navigate("/login");
     } catch (error) {
-      console.log(error);
       toast.error("Ops, algo deu errado!");
     }
   };

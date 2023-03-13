@@ -10,11 +10,11 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <VaccinesProvider>
           <CartProvider>
+        <VaccinesProvider>
             <App />
-          </CartProvider>
         </VaccinesProvider>
+          </CartProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>

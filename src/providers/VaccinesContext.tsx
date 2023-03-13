@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import api from "../services/api";
 import {
@@ -9,8 +9,9 @@ import {
   loadVaccines,
   VaccinesProviderProps,
 } from "./@types";
+import { CartContext } from "./CartContext/CartContext";
 
-const VaccinesContext = createContext<IVaccinesContext>({} as IVaccinesContext);
+export const VaccinesContext = createContext<IVaccinesContext>({} as IVaccinesContext);
 
 const VaccinesProvider = ({ children }: VaccinesProviderProps) => {
   const [loading, setLoading] = useState(false);
@@ -18,7 +19,14 @@ const VaccinesProvider = ({ children }: VaccinesProviderProps) => {
   const token = localStorage.getItem("@TOKEN");
   const [renderVaccines, setRenderVaccines] = useState<IRenderUserVaccine[]>();
 
-  
+  const localVaccinesUserCard = localStorage.getItem("@VACCINESUSER");
+  const [vaccinesCardUser, setVaccinesCardUser] = useState(
+    localVaccinesUserCard ? JSON.parse(localVaccinesUserCard) : []
+  );
+  const {shoppingCartList, setShoppingCartList} = useContext(CartContext)
+
+
+  useEffect(() => {
     const loadVaccines: loadVaccines = async () => {
       try {
         setLoading(true);
@@ -34,7 +42,26 @@ const VaccinesProvider = ({ children }: VaccinesProviderProps) => {
         setLoading(false);
       }
     };
-    
+    loadVaccines();
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("@VACCINESUSER", JSON.stringify(vaccinesCardUser));
+  }, [vaccinesCardUser]);
+
+  const addVaccineUser = () => {
+    toast.success(`As vacinas foram agendadas com sucesso`);
+    if (vaccinesCardUser) {
+      setVaccinesCardUser([...vaccinesCardUser, ...shoppingCartList]);
+      setShoppingCartList([])
+    }
+   else {
+    toast.error(
+      `As vacinas já foram agendadas`
+    );
+  }
+
+};
 
   const usersVaccines = async (data: IUsersVaccines) => {
     try {
@@ -57,6 +84,7 @@ const VaccinesProvider = ({ children }: VaccinesProviderProps) => {
       toast.error("Tente novamente!");
     }
   };
+  
 
   return (
     <VaccinesContext.Provider
@@ -66,6 +94,9 @@ const VaccinesProvider = ({ children }: VaccinesProviderProps) => {
         setVaccines,
         setRenderVaccines,
         renderVaccines,
+        vaccinesCardUser,
+        setVaccinesCardUser,
+        addVaccineUser
       }}
     >
       {children}

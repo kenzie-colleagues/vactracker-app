@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
 
-const HeaderHomePage = () => {
+
+const HeaderMail = () => {
   return (
     <div>
     <header className="bg-blue-100 sm:h-87 flex flex-wrap justify-between  py-4 px-6">
-  <div className=" flex items-center mb-4 sm:mb-0 h-full">
+  <div className=" flex items-center  sm:mb-0 h-full">
     <img
           src={Logo}
           alt="Logo"
@@ -17,8 +18,7 @@ const HeaderHomePage = () => {
         </span>
       <nav className="ml-64 space-x-4 space-x-reverse">
       <div className="flex flex-row sm:flex-row ml-64  ">
-        <Link className='  ml-64 '   to={"/login"}>Login</Link>
-        <Link  className=' ml-12 ' to={"/register"}>Cadastre-se</Link>
+        <Link className='  ml-64 '   to={"/dashboard"}>Voltar</Link>
        </div> 
       </nav>
       </div>
@@ -27,4 +27,4 @@ const HeaderHomePage = () => {
 
   )
 }
-export default HeaderHomePage
+export default HeaderMail
