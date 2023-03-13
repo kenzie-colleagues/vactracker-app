@@ -5,7 +5,7 @@ export interface IDefaultProviderProps {
 }
 
 export interface IProductsProps {
-  product: IVaccines;
+  product: IVaccines
 }
 
 export interface ICartContext {
@@ -22,3 +22,4 @@ export interface ICartContext {
   removeCartShopping: (productId: any) => void;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
 }
+
