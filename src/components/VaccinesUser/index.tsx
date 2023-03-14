@@ -15,10 +15,10 @@ function VaccinesUser() {
         {vaccinesCardUser.length > 0 ? (
           <VaccinesUserList/>
         ) : (
-          <div className="w-60">
-            <h3 className="mt-1 text-sm font-medium text-gray-700" >Você ainda não possui registro de vacina!</h3>
+          <div className="w-full">
+            <h3 className="flex item-center justify-center  w-full mt-1 text-sm text-center font-medium text-gray-700" >Você ainda não possui registro de vacina!</h3>
             <div>
-              <p className="mt-1 text-sm font-medium text-gray-600" >
+              <p className="p-4 flex item-center justify-center w-full mt-1 text-sm font-medium text-center text-gray-600" >
               Caso precise de ajuda para adquirir nossas vacinas, entre em
               contato!
               </p>
