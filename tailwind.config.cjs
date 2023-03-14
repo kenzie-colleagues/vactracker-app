@@ -3,6 +3,15 @@ module.exports = {
   content: [ "./index.html",
   "./src/**/*.{js,ts,jsx,tsx}",],
   theme: {
+
+    extend: {},
+    maxHeight: {
+      '500': '500px',
+      '600': '600px',
+      '700': '700px',
+      '800': '800px',
+      '900': '900px',
+=======
     extend: {
       margin:{
         'Margin-Auto': '0 auto'
@@ -22,6 +31,7 @@ module.exports = {
       'xxl': '1320px',
     
       '2xl':'1536px',
+
 
     },
   },
