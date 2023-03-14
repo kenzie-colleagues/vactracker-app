@@ -1,10 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import { CartProvider } from "./providers/CartContext/CartContext";
+import UserProvider from "./providers/UserContext";
+import VaccinesProvider from "./providers/VaccinesContext";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <BrowserRouter>
+      <UserProvider>
+          <CartProvider>
+        <VaccinesProvider>
+            <App />
+        </VaccinesProvider>
+          </CartProvider>
+      </UserProvider>
+    </BrowserRouter>
+  </React.StrictMode>
+);
