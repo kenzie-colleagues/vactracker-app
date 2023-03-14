@@ -11,7 +11,6 @@ module.exports = {
       '700': '700px',
       '800': '800px',
       '900': '900px',
-=======
     extend: {
       colors:{
         'bgd-Header': '#DCF1FA'
@@ -37,3 +36,5 @@ module.exports = {
   },
   plugins: [],
 }
+}
+
