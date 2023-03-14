@@ -16,21 +16,21 @@ const HeaderDash = () => {
   };
 
   return (
-    <div className="">
-      <header className="">
+    <div className="w-full">
+      <header className=" bg-[#DCF1FA] h-80px flex justify-around ">
 
-        <div>
+        <div className="w-2/6 flex items-center justify-center  ">
           <img src={Logo} alt="Logo" className=" " />
           <span className="text-green-600 text-base sm:text-2xl md:text-4xl font-bold">
             VacTracker
           </span>
         </div>
 
-        <div className="">
+        <div className="w-2/6 flex items-center justify-center flex-row">
           <SearchForm />
         </div>
 
-        <div className="">
+        <div className=" w-2/6 flex items-center justify-center gap-10">
           <button className="" type="button" onClick={handleOpenCartModal}>
             <MdShoppingCart className="" />
           </button>

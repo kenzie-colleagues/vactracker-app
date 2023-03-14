@@ -13,8 +13,8 @@ module.exports = {
       '900': '900px',
 =======
     extend: {
-      margin:{
-        'Margin-Auto': '0 auto'
+      colors:{
+        'bgd-Header': '#DCF1FA'
       }
     },
     screens: {
