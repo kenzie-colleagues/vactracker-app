@@ -12,13 +12,13 @@ const SearchForm = () => {
   };
   return (
     <form onSubmit={submit}>
-      <input  className=" sm:flex-row ml-44 pl-4  rounded-lg space-x-4  h-full p-3 "
+      <input  className=" w-full h-5 sm:flex-row pl-4 rounded-lg space-x-4  h-full p-3 "
         type='text'
         placeholder='Digitar pesquisa'
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
       />
-      <button  type='submit' className= 'mr-20 ml-4'>
+      <button  type='submit' className= 'ml-4'>
         <MdSearch />
       </button>
     </form>
