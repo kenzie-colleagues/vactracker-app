@@ -9,9 +9,14 @@ const FooterHomePage = () => {
         <span className='text-emerald-800'>Central de Atendimento: 0800-1234-5678</span>
         <span className='text-emerald-800'>Atendimento 24 horas</span>
       </div>
-      <div>
+      <div className='hidden sm:block'>
         <Link className='ml-64' to={"/mail"}>
-          <span className='mr-4 text-emerald-800'  >Fale Conosco</span>
+          <span className='mr-4 text-emerald-800'>Fale Conosco</span>
+          <img src={FaleConoscoImg} alt="Fale Conosco" className="inline-block h-12 w-12" />
+        </Link>
+      </div>
+      <div className='block sm:hidden'>
+        <Link to={"/mail"}>
           <img src={FaleConoscoImg} alt="Fale Conosco" className="inline-block h-12 w-12" />
         </Link>
       </div>
@@ -20,5 +25,9 @@ const FooterHomePage = () => {
 };
 
 export default FooterHomePage;
+
+
+
+
 
 
