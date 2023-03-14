@@ -11,8 +11,8 @@ const SearchForm = () => {
     setSearchValue('');
   };
   return (
-    <form onSubmit={submit}>
-      <input  className=" w-full h-5 sm:flex-row pl-4 rounded-lg space-x-4  h-full p-3 "
+    <form onSubmit={submit} className="w-full h-10 flex items-center justify-center flex-row">
+      <input  className=" w-11/12 h-full flex items-center justify-center flex-row rounded-lg p-3 "
         type='text'
         placeholder='Digitar pesquisa'
         value={searchValue}

@@ -4,8 +4,8 @@ module.exports = {
   "./src/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {
-      margin:{
-        'Margin-Auto': '0 auto'
+      colors:{
+        'bgd-Header': '#DCF1FA'
       }
     },
     screens: {
