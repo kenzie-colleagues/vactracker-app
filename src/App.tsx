@@ -1,9 +1,8 @@
+import "./index.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import UserProvider, { UserContext } from "./providers/UserContext";
 import AppRoutes from "./routes/routes";
+import './reset.css'
 
 function App() {
   return (

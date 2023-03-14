@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { UseFormRegisterReturn } from "react-hook-form";
 
 export interface IUserProviderProps {
   children: ReactNode;
@@ -20,6 +21,7 @@ export interface IUserRegisterFormValues {
 }
 
 export interface IUserLoginFormValues {
+  accesToken(accesToken: string): unknown;
   email: string;
   password: string;
 }
@@ -75,4 +77,17 @@ export interface IVaccinesContext {
   setRenderVaccines: React.Dispatch<
     React.SetStateAction<IRenderUserVaccine[] | undefined>
   >;
+  vaccinesCardUser: any;
+  setVaccinesCardUser: React.Dispatch<any>;
+  addVaccineUser: () => void
+
+
+}
+
+export interface IInputProps{
+  label:string;
+  register: UseFormRegisterReturn<string>;
+  error?: string;
+  type: 'text' | 'email' | 'password'
+  placeholder: string
 }
