@@ -25,7 +25,6 @@ const formSchema = yup.object().shape({
   name: yup.string().required("Nome obrigatório"),
   dateOfBirth: yup.string().required("Campo obrigatório"),
   CPF: yup.string().required("Campo obrigatório"),
-  course_module: yup.string().required("Campo obrigatório"),
 });
 const RegisterPage = () => {
   const {
